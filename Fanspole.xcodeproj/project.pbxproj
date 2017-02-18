@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FFFBC9B01E5836F700C8B781 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9AF1E5836F700C8B781 /* AppDelegate.swift */; };
+		FFFBC9B21E5836F700C8B781 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9B11E5836F700C8B781 /* ViewController.swift */; };
+		FFFBC9B51E5836F700C8B781 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFBC9B31E5836F700C8B781 /* Main.storyboard */; };
+		FFFBC9B71E5836F700C8B781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFFBC9B61E5836F700C8B781 /* Assets.xcassets */; };
+		FFFBC9BA1E5836F700C8B781 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFBC9B81E5836F700C8B781 /* LaunchScreen.storyboard */; };
+		FFFBC9C51E5836F700C8B781 /* FanspoleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9C41E5836F700C8B781 /* FanspoleTests.swift */; };
+		FFFBC9D01E5836F700C8B781 /* FanspoleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9CF1E5836F700C8B781 /* FanspoleUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FFFBC9C11E5836F700C8B781 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFFBC9A41E5836F700C8B781 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFFBC9AB1E5836F700C8B781;
+			remoteInfo = Fanspole;
+		};
+		FFFBC9CC1E5836F700C8B781 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFFBC9A41E5836F700C8B781 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFFBC9AB1E5836F700C8B781;
+			remoteInfo = Fanspole;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FFFBC9AC1E5836F700C8B781 /* Fanspole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fanspole.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFFBC9AF1E5836F700C8B781 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FFFBC9B11E5836F700C8B781 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FFFBC9B41E5836F700C8B781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FFFBC9B61E5836F700C8B781 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFFBC9B91E5836F700C8B781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FFFBC9BB1E5836F700C8B781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFFBC9C01E5836F700C8B781 /* FanspoleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FanspoleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFFBC9C41E5836F700C8B781 /* FanspoleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanspoleTests.swift; sourceTree = "<group>"; };
+		FFFBC9C61E5836F700C8B781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFFBC9CB1E5836F700C8B781 /* FanspoleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FanspoleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFFBC9CF1E5836F700C8B781 /* FanspoleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanspoleUITests.swift; sourceTree = "<group>"; };
+		FFFBC9D11E5836F700C8B781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFFBC9A91E5836F700C8B781 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFFBC9BD1E5836F700C8B781 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFFBC9C81E5836F700C8B781 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFFBC9A31E5836F700C8B781 = {
+			isa = PBXGroup;
+			children = (
+				FFFBC9AE1E5836F700C8B781 /* Fanspole */,
+				FFFBC9C31E5836F700C8B781 /* FanspoleTests */,
+				FFFBC9CE1E5836F700C8B781 /* FanspoleUITests */,
+				FFFBC9AD1E5836F700C8B781 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFFBC9AD1E5836F700C8B781 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFFBC9AC1E5836F700C8B781 /* Fanspole.app */,
+				FFFBC9C01E5836F700C8B781 /* FanspoleTests.xctest */,
+				FFFBC9CB1E5836F700C8B781 /* FanspoleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFFBC9AE1E5836F700C8B781 /* Fanspole */ = {
+			isa = PBXGroup;
+			children = (
+				FFFBC9AF1E5836F700C8B781 /* AppDelegate.swift */,
+				FFFBC9B11E5836F700C8B781 /* ViewController.swift */,
+				FFFBC9B31E5836F700C8B781 /* Main.storyboard */,
+				FFFBC9B61E5836F700C8B781 /* Assets.xcassets */,
+				FFFBC9B81E5836F700C8B781 /* LaunchScreen.storyboard */,
+				FFFBC9BB1E5836F700C8B781 /* Info.plist */,
+			);
+			path = Fanspole;
+			sourceTree = "<group>";
+		};
+		FFFBC9C31E5836F700C8B781 /* FanspoleTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFFBC9C41E5836F700C8B781 /* FanspoleTests.swift */,
+				FFFBC9C61E5836F700C8B781 /* Info.plist */,
+			);
+			path = FanspoleTests;
+			sourceTree = "<group>";
+		};
+		FFFBC9CE1E5836F700C8B781 /* FanspoleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FFFBC9CF1E5836F700C8B781 /* FanspoleUITests.swift */,
+				FFFBC9D11E5836F700C8B781 /* Info.plist */,
+			);
+			path = FanspoleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFFBC9AB1E5836F700C8B781 /* Fanspole */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFFBC9D41E5836F700C8B781 /* Build configuration list for PBXNativeTarget "Fanspole" */;
+			buildPhases = (
+				FFFBC9A81E5836F700C8B781 /* Sources */,
+				FFFBC9A91E5836F700C8B781 /* Frameworks */,
+				FFFBC9AA1E5836F700C8B781 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fanspole;
+			productName = Fanspole;
+			productReference = FFFBC9AC1E5836F700C8B781 /* Fanspole.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FFFBC9BF1E5836F700C8B781 /* FanspoleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFFBC9D71E5836F700C8B781 /* Build configuration list for PBXNativeTarget "FanspoleTests" */;
+			buildPhases = (
+				FFFBC9BC1E5836F700C8B781 /* Sources */,
+				FFFBC9BD1E5836F700C8B781 /* Frameworks */,
+				FFFBC9BE1E5836F700C8B781 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFFBC9C21E5836F700C8B781 /* PBXTargetDependency */,
+			);
+			name = FanspoleTests;
+			productName = FanspoleTests;
+			productReference = FFFBC9C01E5836F700C8B781 /* FanspoleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FFFBC9CA1E5836F700C8B781 /* FanspoleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFFBC9DA1E5836F700C8B781 /* Build configuration list for PBXNativeTarget "FanspoleUITests" */;
+			buildPhases = (
+				FFFBC9C71E5836F700C8B781 /* Sources */,
+				FFFBC9C81E5836F700C8B781 /* Frameworks */,
+				FFFBC9C91E5836F700C8B781 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFFBC9CD1E5836F700C8B781 /* PBXTargetDependency */,
+			);
+			name = FanspoleUITests;
+			productName = FanspoleUITests;
+			productReference = FFFBC9CB1E5836F700C8B781 /* FanspoleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFFBC9A41E5836F700C8B781 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Fanspole;
+				TargetAttributes = {
+					FFFBC9AB1E5836F700C8B781 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = KA4XL394HC;
+						ProvisioningStyle = Automatic;
+					};
+					FFFBC9BF1E5836F700C8B781 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = KA4XL394HC;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FFFBC9AB1E5836F700C8B781;
+					};
+					FFFBC9CA1E5836F700C8B781 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = KA4XL394HC;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FFFBC9AB1E5836F700C8B781;
+					};
+				};
+			};
+			buildConfigurationList = FFFBC9A71E5836F700C8B781 /* Build configuration list for PBXProject "Fanspole" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFFBC9A31E5836F700C8B781;
+			productRefGroup = FFFBC9AD1E5836F700C8B781 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFFBC9AB1E5836F700C8B781 /* Fanspole */,
+				FFFBC9BF1E5836F700C8B781 /* FanspoleTests */,
+				FFFBC9CA1E5836F700C8B781 /* FanspoleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFFBC9AA1E5836F700C8B781 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFFBC9BA1E5836F700C8B781 /* LaunchScreen.storyboard in Resources */,
+				FFFBC9B71E5836F700C8B781 /* Assets.xcassets in Resources */,
+				FFFBC9B51E5836F700C8B781 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFFBC9BE1E5836F700C8B781 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFFBC9C91E5836F700C8B781 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFFBC9A81E5836F700C8B781 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFFBC9B21E5836F700C8B781 /* ViewController.swift in Sources */,
+				FFFBC9B01E5836F700C8B781 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFFBC9BC1E5836F700C8B781 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFFBC9C51E5836F700C8B781 /* FanspoleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFFBC9C71E5836F700C8B781 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFFBC9D01E5836F700C8B781 /* FanspoleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFFBC9C21E5836F700C8B781 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFFBC9AB1E5836F700C8B781 /* Fanspole */;
+			targetProxy = FFFBC9C11E5836F700C8B781 /* PBXContainerItemProxy */;
+		};
+		FFFBC9CD1E5836F700C8B781 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFFBC9AB1E5836F700C8B781 /* Fanspole */;
+			targetProxy = FFFBC9CC1E5836F700C8B781 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FFFBC9B31E5836F700C8B781 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFFBC9B41E5836F700C8B781 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FFFBC9B81E5836F700C8B781 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFFBC9B91E5836F700C8B781 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FFFBC9D21E5836F700C8B781 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FFFBC9D31E5836F700C8B781 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFFBC9D51E5836F700C8B781 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KA4XL394HC;
+				INFOPLIST_FILE = Fanspole/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fanspole.Fanspole;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FFFBC9D61E5836F700C8B781 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KA4XL394HC;
+				INFOPLIST_FILE = Fanspole/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fanspole.Fanspole;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FFFBC9D81E5836F700C8B781 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KA4XL394HC;
+				INFOPLIST_FILE = FanspoleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fanspole.FanspoleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fanspole.app/Fanspole";
+			};
+			name = Debug;
+		};
+		FFFBC9D91E5836F700C8B781 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KA4XL394HC;
+				INFOPLIST_FILE = FanspoleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fanspole.FanspoleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fanspole.app/Fanspole";
+			};
+			name = Release;
+		};
+		FFFBC9DB1E5836F700C8B781 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = KA4XL394HC;
+				INFOPLIST_FILE = FanspoleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fanspole.FanspoleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Fanspole;
+			};
+			name = Debug;
+		};
+		FFFBC9DC1E5836F700C8B781 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = KA4XL394HC;
+				INFOPLIST_FILE = FanspoleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fanspole.FanspoleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Fanspole;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFFBC9A71E5836F700C8B781 /* Build configuration list for PBXProject "Fanspole" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFFBC9D21E5836F700C8B781 /* Debug */,
+				FFFBC9D31E5836F700C8B781 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFFBC9D41E5836F700C8B781 /* Build configuration list for PBXNativeTarget "Fanspole" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFFBC9D51E5836F700C8B781 /* Debug */,
+				FFFBC9D61E5836F700C8B781 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FFFBC9D71E5836F700C8B781 /* Build configuration list for PBXNativeTarget "FanspoleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFFBC9D81E5836F700C8B781 /* Debug */,
+				FFFBC9D91E5836F700C8B781 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FFFBC9DA1E5836F700C8B781 /* Build configuration list for PBXNativeTarget "FanspoleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFFBC9DB1E5836F700C8B781 /* Debug */,
+				FFFBC9DC1E5836F700C8B781 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFFBC9A41E5836F700C8B781 /* Project object */;
+}
