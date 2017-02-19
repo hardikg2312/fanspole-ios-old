@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF0BE37B1E5A0219008AE16B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF0BE37A1E5A0219008AE16B /* Assets.xcassets */; };
 		FFFBC9B01E5836F700C8B781 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9AF1E5836F700C8B781 /* AppDelegate.swift */; };
-		FFFBC9B21E5836F700C8B781 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9B11E5836F700C8B781 /* ViewController.swift */; };
+		FFFBC9B21E5836F700C8B781 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9B11E5836F700C8B781 /* LoginController.swift */; };
 		FFFBC9B51E5836F700C8B781 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFBC9B31E5836F700C8B781 /* Main.storyboard */; };
-		FFFBC9B71E5836F700C8B781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFFBC9B61E5836F700C8B781 /* Assets.xcassets */; };
 		FFFBC9BA1E5836F700C8B781 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFBC9B81E5836F700C8B781 /* LaunchScreen.storyboard */; };
 		FFFBC9C51E5836F700C8B781 /* FanspoleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9C41E5836F700C8B781 /* FanspoleTests.swift */; };
 		FFFBC9D01E5836F700C8B781 /* FanspoleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9CF1E5836F700C8B781 /* FanspoleUITests.swift */; };
+		FFFBC9DE1E58385800C8B781 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9DD1E58385800C8B781 /* UIView.swift */; };
+		FFFBC9E01E5839DF00C8B781 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9DF1E5839DF00C8B781 /* PageCell.swift */; };
+		FFFBC9E21E583C6E00C8B781 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9E11E583C6E00C8B781 /* Page.swift */; };
+		FFFBC9E41E58438900C8B781 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9E31E58438900C8B781 /* LoginCell.swift */; };
+		FFFBC9E61E5848BF00C8B781 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9E51E5848BF00C8B781 /* MainNavigationController.swift */; };
+		FFFBC9EB1E58492D00C8B781 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9EA1E58492D00C8B781 /* UserDefaults.swift */; };
+		FFFBC9ED1E584EAC00C8B781 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9EC1E584EAC00C8B781 /* HomeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF0BE37A1E5A0219008AE16B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFFBC9AC1E5836F700C8B781 /* Fanspole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fanspole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFFBC9AF1E5836F700C8B781 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FFFBC9B11E5836F700C8B781 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FFFBC9B11E5836F700C8B781 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FFFBC9B41E5836F700C8B781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FFFBC9B61E5836F700C8B781 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFFBC9B91E5836F700C8B781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFFBC9BB1E5836F700C8B781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFFBC9C01E5836F700C8B781 /* FanspoleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FanspoleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +54,13 @@
 		FFFBC9CB1E5836F700C8B781 /* FanspoleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FanspoleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFFBC9CF1E5836F700C8B781 /* FanspoleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanspoleUITests.swift; sourceTree = "<group>"; };
 		FFFBC9D11E5836F700C8B781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFFBC9DD1E58385800C8B781 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		FFFBC9DF1E5839DF00C8B781 /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		FFFBC9E11E583C6E00C8B781 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		FFFBC9E31E58438900C8B781 /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
+		FFFBC9E51E5848BF00C8B781 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		FFFBC9EA1E58492D00C8B781 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		FFFBC9EC1E584EAC00C8B781 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +111,18 @@
 		FFFBC9AE1E5836F700C8B781 /* Fanspole */ = {
 			isa = PBXGroup;
 			children = (
+				FFFBC9E91E58491400C8B781 /* Extensions */,
 				FFFBC9AF1E5836F700C8B781 /* AppDelegate.swift */,
-				FFFBC9B11E5836F700C8B781 /* ViewController.swift */,
+				FFFBC9B11E5836F700C8B781 /* LoginController.swift */,
 				FFFBC9B31E5836F700C8B781 /* Main.storyboard */,
-				FFFBC9B61E5836F700C8B781 /* Assets.xcassets */,
 				FFFBC9B81E5836F700C8B781 /* LaunchScreen.storyboard */,
 				FFFBC9BB1E5836F700C8B781 /* Info.plist */,
+				FFFBC9DF1E5839DF00C8B781 /* PageCell.swift */,
+				FFFBC9E11E583C6E00C8B781 /* Page.swift */,
+				FFFBC9E31E58438900C8B781 /* LoginCell.swift */,
+				FFFBC9E51E5848BF00C8B781 /* MainNavigationController.swift */,
+				FFFBC9EC1E584EAC00C8B781 /* HomeController.swift */,
+				FF0BE37A1E5A0219008AE16B /* Assets.xcassets */,
 			);
 			path = Fanspole;
 			sourceTree = "<group>";
@@ -123,6 +143,15 @@
 				FFFBC9D11E5836F700C8B781 /* Info.plist */,
 			);
 			path = FanspoleUITests;
+			sourceTree = "<group>";
+		};
+		FFFBC9E91E58491400C8B781 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FFFBC9DD1E58385800C8B781 /* UIView.swift */,
+				FFFBC9EA1E58492D00C8B781 /* UserDefaults.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFFBC9BA1E5836F700C8B781 /* LaunchScreen.storyboard in Resources */,
-				FFFBC9B71E5836F700C8B781 /* Assets.xcassets in Resources */,
+				FF0BE37B1E5A0219008AE16B /* Assets.xcassets in Resources */,
 				FFFBC9B51E5836F700C8B781 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,8 +291,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFFBC9B21E5836F700C8B781 /* ViewController.swift in Sources */,
+				FFFBC9B21E5836F700C8B781 /* LoginController.swift in Sources */,
+				FFFBC9DE1E58385800C8B781 /* UIView.swift in Sources */,
+				FFFBC9E01E5839DF00C8B781 /* PageCell.swift in Sources */,
 				FFFBC9B01E5836F700C8B781 /* AppDelegate.swift in Sources */,
+				FFFBC9EB1E58492D00C8B781 /* UserDefaults.swift in Sources */,
+				FFFBC9ED1E584EAC00C8B781 /* HomeController.swift in Sources */,
+				FFFBC9E61E5848BF00C8B781 /* MainNavigationController.swift in Sources */,
+				FFFBC9E21E583C6E00C8B781 /* Page.swift in Sources */,
+				FFFBC9E41E58438900C8B781 /* LoginCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +548,7 @@
 				FFFBC9D61E5836F700C8B781 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FFFBC9D71E5836F700C8B781 /* Build configuration list for PBXNativeTarget "FanspoleTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +557,7 @@
 				FFFBC9D91E5836F700C8B781 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FFFBC9DA1E5836F700C8B781 /* Build configuration list for PBXNativeTarget "FanspoleUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +566,7 @@
 				FFFBC9DC1E5836F700C8B781 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
