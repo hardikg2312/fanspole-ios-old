@@ -88,6 +88,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF0BE37C1E5A1002008AE16B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FFFBC9EC1E584EAC00C8B781 /* HomeController.swift */,
+				FFFBC9E51E5848BF00C8B781 /* MainNavigationController.swift */,
+				FFFBC9B11E5836F700C8B781 /* LoginController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FF0BE37D1E5A1043008AE16B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FFFBC9E31E58438900C8B781 /* LoginCell.swift */,
+				FFFBC9DF1E5839DF00C8B781 /* PageCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FF0BE37E1E5A105A008AE16B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FFFBC9E11E583C6E00C8B781 /* Page.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		FFFBC9A31E5836F700C8B781 = {
 			isa = PBXGroup;
 			children = (
@@ -111,17 +138,14 @@
 		FFFBC9AE1E5836F700C8B781 /* Fanspole */ = {
 			isa = PBXGroup;
 			children = (
-				FFFBC9E91E58491400C8B781 /* Extensions */,
 				FFFBC9AF1E5836F700C8B781 /* AppDelegate.swift */,
-				FFFBC9B11E5836F700C8B781 /* LoginController.swift */,
+				FF0BE37E1E5A105A008AE16B /* Models */,
+				FF0BE37D1E5A1043008AE16B /* Views */,
+				FF0BE37C1E5A1002008AE16B /* Controllers */,
+				FFFBC9E91E58491400C8B781 /* Extensions */,
 				FFFBC9B31E5836F700C8B781 /* Main.storyboard */,
 				FFFBC9B81E5836F700C8B781 /* LaunchScreen.storyboard */,
 				FFFBC9BB1E5836F700C8B781 /* Info.plist */,
-				FFFBC9DF1E5839DF00C8B781 /* PageCell.swift */,
-				FFFBC9E11E583C6E00C8B781 /* Page.swift */,
-				FFFBC9E31E58438900C8B781 /* LoginCell.swift */,
-				FFFBC9E51E5848BF00C8B781 /* MainNavigationController.swift */,
-				FFFBC9EC1E584EAC00C8B781 /* HomeController.swift */,
 				FF0BE37A1E5A0219008AE16B /* Assets.xcassets */,
 			);
 			path = Fanspole;
