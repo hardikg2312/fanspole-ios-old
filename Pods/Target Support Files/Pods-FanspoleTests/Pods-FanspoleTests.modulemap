@@ -1,0 +1,6 @@
+framework module Pods_FanspoleTests {
+  umbrella header "Pods-FanspoleTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
