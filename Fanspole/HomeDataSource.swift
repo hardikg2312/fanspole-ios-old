@@ -12,14 +12,15 @@ import SwiftyJSON
 
 class HomeDataSource: Datasource, JSONDecodable {
     
-    let events = ["Hello", "hi"]
+    let events: [Event]
     
     required init(json: JSON) throws {
-//        let usersJsonArray = json["users"].array
-//        self.users = usersJsonArray!.map{User(json: $0)}
-//        
-//        let tweetJsonArray = json["tweets"].array
-//        self.tweets = tweetJsonArray!.map{Tweet(json: $0)}
+        let data = json["data"]
+        guard let upcoimgMatch = data["upcoming_matches"].array else {
+            throw NSError(domain: "com.fanspole", code: 1, userInfo: [NSLocalizedDescriptionKey: "Parsing Josn not valid"])
+        }
+        self.events = upcoimgMatch.map{Event(json: $0)}
+        
     }
     
     override func cellClasses() -> [DatasourceCell.Type] {

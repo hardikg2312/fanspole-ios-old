@@ -18,12 +18,9 @@ class HomeController: DatasourceController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(handleSignOut))
         
-//        let homeDataSourec = HomeDataSource()
-//        self.datasource = homeDataSourec
         
         Service.sharedInstance.fetchEventFeed { (homeDataSource) in
-//            self.datasource = homeDataSource
-            print("calling from home controller")
+            self.datasource = homeDataSource
         }
         
     }
