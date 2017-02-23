@@ -31,7 +31,7 @@ class Service {
     private func buildHeaders() -> [String : String] {
         let headersBuilder = HeaderBuilder(defaultHeaders: ["X-Fanspole-Client":"254b4f821a12144966c43444039dca21b97dde0be39b1fc1d2f573228dea6bbb"])
         let authorizationRequirement = AuthorizationRequirement.none
-        let apiHeaders = headersBuilder.headers(forAuthorizationRequirement: authorizationRequirement, including: ["Authorization":"Bearer 6c8a56c2585a2ca1766fab010e4e3cdbd3e411a703b83f6449c058d55e7f3bff"])
+        let apiHeaders = headersBuilder.headers(forAuthorizationRequirement: authorizationRequirement, including: ["Authorization":"Bearer ce150041a3defd738666c10edfe3146b74b1ea10be27aa0439b46952aab5dfb4"])
         return apiHeaders
     }
     

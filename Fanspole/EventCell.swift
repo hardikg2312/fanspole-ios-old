@@ -16,6 +16,14 @@ class EventCell: DatasourceCell{
             eventTitle.text = "Match \(event.match_no) (\(event.match_stage))"
             eventTeams.text = "\(event.teamOne.name_attr) vs \(event.teamTwo.name_attr)"
             eventGround.text = "\(event.ground.name) \(event.ground.location) \(event.ground.country)"
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            dateFormatter.locale = Locale.init(identifier: "en_GB")
+            let dateObj = dateFormatter.date(from: event.event_lock_time)
+            dateFormatter.dateFormat = "MMM dd' at 'h:mma"
+            eventTime.text = "\(dateFormatter.string(from: dateObj!))"
+            
         }
     }
     
@@ -43,7 +51,6 @@ class EventCell: DatasourceCell{
     
     let eventTeams: UILabel = {
         let et = UILabel()
-//        et.text = "IND vs AUS"
         et.textAlignment = .center
         et.font = UIFont.systemFont(ofSize: 16)
         et.textColor = .white
@@ -52,7 +59,6 @@ class EventCell: DatasourceCell{
     
     let eventGround: UILabel = {
         let eg = UILabel()
-//        eg.text = "Adelaide Ovel, Adelaide, Astralia"
         eg.numberOfLines = 0
         eg.textAlignment = .center
         eg.font = UIFont.systemFont(ofSize: 12)
@@ -62,7 +68,6 @@ class EventCell: DatasourceCell{
     
     let eventTime: UILabel = {
         let et = UILabel()
-        et.text = "Today at 14:20"
         et.textAlignment = .center
         et.font = UIFont.boldSystemFont(ofSize: 12)
         et.textColor = .white
@@ -128,7 +133,7 @@ class EventCell: DatasourceCell{
         addSubview(lineSeparatorView)
         addSubview(lineSeparator2View)
         
-        eventTitle.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topConstant: 4, leftConstant: 0, bottomConstant: 4, rightConstant: 0, widthConstant: 0, heightConstant: 20)
+        eventTitle.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topConstant: 6, leftConstant: 0, bottomConstant: 6, rightConstant: 0, widthConstant: 0, heightConstant: 20)
         eventGround.anchor(eventTeamInfoStackView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topConstant: 4, leftConstant: 20, bottomConstant: 4, rightConstant: 20, widthConstant: 0, heightConstant: 0)
         eventTime.anchor(eventGround.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topConstant: 4, leftConstant: 0, bottomConstant: 4, rightConstant: 0, widthConstant: 0, heightConstant: 20)
         lineSeparatorView.anchor(eventTime.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor)
