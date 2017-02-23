@@ -13,17 +13,10 @@ class EventCell: DatasourceCell{
     override var datasourceItem: Any?{
         didSet{
             guard let event = datasourceItem as? Event else { return }
-            eventTitle.text = "Match \(event.match_no) (\(event.match_stage))"
-            eventTeams.text = "\(event.teamOne.name_attr) vs \(event.teamTwo.name_attr)"
+            eventTitle.text = "Match \(event.matchNo) (\(event.matchStage))"
+            eventTeams.text = "\(event.teamOne.nameAttr) vs \(event.teamTwo.nameAttr)"
             eventGround.text = "\(event.ground.name) \(event.ground.location) \(event.ground.country)"
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-            dateFormatter.locale = Locale.init(identifier: "en_GB")
-            let dateObj = dateFormatter.date(from: event.event_lock_time)
-            dateFormatter.dateFormat = "MMM dd' at 'h:mma"
-            eventTime.text = "\(dateFormatter.string(from: dateObj!))"
-            
+            eventTime.text = "\(event.getEventLockTime())"
         }
     }
     

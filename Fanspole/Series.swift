@@ -12,11 +12,11 @@ import SwiftyJSON
 struct Series {
     let id: Int
     let name: String
-    let index_value: Int
+    let indexValue: Int
     
     init(json: JSON) {
         self.id = json["id"].intValue
         self.name = json["name"].stringValue
-        self.index_value = json["index_value"].intValue
+        self.indexValue = json["index_value"].intValue
     }
 }

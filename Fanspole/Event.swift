@@ -12,14 +12,14 @@ import SwiftyJSON
 
 struct Event {
     let id: Int
-    let team_created: Bool
-    let event_time: String
-    let event_lock_time: String
-    let match_type: String
-    let series_phase_id: Int
-    let match_no: Int
-    let match_stage: String
-    let topic_id: Int
+    let teamCreated: Bool
+    let eventTime: String
+    let eventLockTime: String
+    let matchType: String
+    let seriesPhaseId: Int
+    let matchNo: Int
+    let matchStage: String
+    let topicId: Int
     let series: Series
     let ground: Ground
     let teamOne: Team
@@ -27,14 +27,14 @@ struct Event {
     
     init(json: JSON) {
         self.id = json["id"].intValue
-        self.team_created = json["team_created"].boolValue
-        self.event_time = json["event_time"].stringValue
-        self.event_lock_time = json["event_lock_time"].stringValue
-        self.match_type = json["match_type"].stringValue
-        self.series_phase_id = json["series_phase_id"].intValue
-        self.match_no = json["match_no"].intValue
-        self.match_stage = json["match_stage"].stringValue
-        self.topic_id = json["topic_id"].intValue
+        self.teamCreated = json["team_created"].boolValue
+        self.eventTime = json["event_time"].stringValue
+        self.eventLockTime = json["event_lock_time"].stringValue
+        self.matchType = json["match_type"].stringValue
+        self.seriesPhaseId = json["series_phase_id"].intValue
+        self.matchNo = json["match_no"].intValue
+        self.matchStage = json["match_stage"].stringValue
+        self.topicId = json["topic_id"].intValue
         
         let seriesJson = json["series"]
         self.series = Series(json: seriesJson)
@@ -47,6 +47,15 @@ struct Event {
         
         let teamTwoJson = json["team2"]
         self.teamTwo = Team(json: teamTwoJson)
+    }
+    
+    func getEventLockTime() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.locale = Locale.init(identifier: "en_GB")
+        let dateObj = dateFormatter.date(from: self.eventLockTime)
+        dateFormatter.dateFormat = "MMM dd' at 'h:mma"
+        return dateFormatter.string(from: dateObj!)
     }
 }
 

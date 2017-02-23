@@ -14,11 +14,10 @@ class HomeController: DatasourceController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "We're logged in"
+        navigationItem.title = "Home"
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(handleSignOut))
-        
-        
+        collectionView!.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         Service.sharedInstance.fetchEventFeed { (homeDataSource) in
             self.datasource = homeDataSource
         }

@@ -16,10 +16,12 @@ class HomeDataSource: Datasource, JSONDecodable {
     
     required init(json: JSON) throws {
         let data = json["data"]
-        guard let upcoimgMatch = data["upcoming_matches"].array else {
+        guard let upcoimgMatchesJsons = data["upcoming_matches"].array,  let finishedMatchesJsons = data["finished_matches"].array else {
             throw NSError(domain: "com.fanspole", code: 1, userInfo: [NSLocalizedDescriptionKey: "Parsing Josn not valid"])
         }
-        self.events = upcoimgMatch.map{Event(json: $0)}
+        let upcoimgMatches = upcoimgMatchesJsons.map{Event(json: $0)}
+        let finishedMatches = finishedMatchesJsons.map{Event(json: $0)}
+        self.events = upcoimgMatches + finishedMatches
         
     }
     
