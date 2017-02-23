@@ -16,7 +16,20 @@ class EventCell: DatasourceCell{
             eventTitle.text = "Match \(event.matchNo) (\(event.matchStage))"
             eventTeams.text = "\(event.teamOne.nameAttr) vs \(event.teamTwo.nameAttr)"
             eventGround.text = "\(event.ground.name) \(event.ground.location) \(event.ground.country)"
-            eventTime.text = "\(event.getEventLockTime())"
+            eventTime.text = "\(event.getEventLockTimeAsString())"
+            
+            if !event.teamCreated {
+                viewTeamButtonContainerView.removeFromSuperview()
+                viewTeamButton.removeFromSuperview()
+            }
+            
+            if event.getEventLockTime() < Date(){
+                manageTeamButtonContainerView.removeFromSuperview()
+                manageTeamButton.removeFromSuperview()
+            } else {
+                leaderboardButtonContainerView.removeFromSuperview()
+                leaderboardButton.removeFromSuperview()
+            }
         }
     }
     
@@ -86,13 +99,6 @@ class EventCell: DatasourceCell{
         return leagueBtn
     }()
     
-    let leaderboardButton: UIButton = {
-        let leaderboardBtn = UIButton(type: .system)
-        leaderboardBtn.setImage(#imageLiteral(resourceName: "ic_format_list_numbered"), for: .normal)
-        leaderboardBtn.tintColor = .white
-        return leaderboardBtn
-    }()
-    
     let viewTeamButton: UIButton = {
         let viewTeamBtn = UIButton(type: .system)
         viewTeamBtn.setImage(#imageLiteral(resourceName: "ic_group"), for: .normal)
@@ -112,6 +118,13 @@ class EventCell: DatasourceCell{
         manageTeamBtn.setTitle("Manage Team", for: .normal)
         manageTeamBtn.tintColor = .white
         return manageTeamBtn
+    }()
+    
+    let leaderboardButton: UIButton = {
+        let leaderboardBtn = UIButton(type: .system)
+        leaderboardBtn.setTitle("LeaderBoard", for: .normal)
+        leaderboardBtn.tintColor = .white
+        return leaderboardBtn
     }()
     
     override func setupViews() {
@@ -165,12 +178,12 @@ class EventCell: DatasourceCell{
         eventTeamsTwoImage.anchor(eventTeamsTwoImageContainerView.topAnchor, left: eventTeamsTwoImageContainerView.leftAnchor, bottom: nil, right: eventTeamsTwoImageContainerView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 20, heightConstant: 20)
     }
     
+    
+    let leagueButtonContainerView = UIView()
+    let viewTeamButtonContainerView = UIView()
+    
     private func addEventButtonStackView(){
-        let leagueButtonContainerView = UIView()
-        let leaderboardButtonContainerView = UIView()
-        let viewTeamButtonContainerView = UIView()
-        
-        eventButtonStackView = UIStackView(arrangedSubviews: [leagueButtonContainerView, leaderboardButtonContainerView, viewTeamButtonContainerView])
+        eventButtonStackView = UIStackView(arrangedSubviews: [leagueButtonContainerView, viewTeamButtonContainerView])
         eventButtonStackView.axis = .horizontal
         eventButtonStackView.distribution = .fillEqually
         
@@ -178,21 +191,19 @@ class EventCell: DatasourceCell{
         
         eventButtonStackView.anchor(lineSeparatorView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topConstant: 4, leftConstant: 0, bottomConstant: 4, rightConstant: 0, widthConstant: 0, heightConstant: 28)
         addSubview(leagueButton)
-        addSubview(leaderboardButton)
         addSubview(viewTeamButton)
         
         leagueButton.anchor(leagueButtonContainerView.topAnchor, left: leagueButtonContainerView.leftAnchor, bottom: nil, right: leagueButtonContainerView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 25)
         
-        leaderboardButton.anchor(leaderboardButtonContainerView.topAnchor, left: leaderboardButtonContainerView.leftAnchor, bottom: nil, right: leaderboardButtonContainerView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 25)
-        
         viewTeamButton.anchor(viewTeamButtonContainerView.topAnchor, left: viewTeamButtonContainerView.leftAnchor, bottom: nil, right: viewTeamButtonContainerView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 25)
     }
     
+    let matchCenterButtonContainerView = UIView()
+    let manageTeamButtonContainerView = UIView()
+    let leaderboardButtonContainerView = UIView()
+    
     private func addEventButton2StackView(){
-        let matchCenterButtonContainerView = UIView()
-        let manageTeamButtonContainerView = UIView()
-        
-        let eventButton2StackView = UIStackView(arrangedSubviews: [matchCenterButtonContainerView, manageTeamButtonContainerView])
+        let eventButton2StackView = UIStackView(arrangedSubviews: [matchCenterButtonContainerView, manageTeamButtonContainerView, leaderboardButtonContainerView])
         eventButton2StackView.axis = .horizontal
         eventButton2StackView.distribution = .fillEqually
         
@@ -201,9 +212,12 @@ class EventCell: DatasourceCell{
         eventButton2StackView.anchor(lineSeparator2View.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topConstant: 4, leftConstant: 0, bottomConstant: 4, rightConstant: 0, widthConstant: 0, heightConstant: 28)
         addSubview(matchCenterButton)
         addSubview(manageTeamButton)
+        addSubview(leaderboardButton)
         
         matchCenterButton.anchor(matchCenterButtonContainerView.topAnchor, left: matchCenterButtonContainerView.leftAnchor, bottom: nil, right: matchCenterButtonContainerView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 25)
         
         manageTeamButton.anchor(manageTeamButtonContainerView.topAnchor, left: manageTeamButtonContainerView.leftAnchor, bottom: nil, right: manageTeamButtonContainerView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 25)
+        
+        leaderboardButton.anchor(leaderboardButtonContainerView.topAnchor, left: leaderboardButtonContainerView.leftAnchor, bottom: nil, right: leaderboardButtonContainerView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 25)
     }
 }

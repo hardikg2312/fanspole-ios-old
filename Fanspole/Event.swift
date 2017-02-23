@@ -49,14 +49,35 @@ struct Event {
         self.teamTwo = Team(json: teamTwoJson)
     }
     
-    func getEventLockTime() -> String {
+//    func getEventLockTime() -> String {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+//        dateFormatter.locale = Locale.init(identifier: "en_GB")
+//        let dateObj = dateFormatter.date(from: self.eventLockTime)
+//        dateFormatter.dateFormat = "MMM dd' at 'h:mma"
+//        return dateFormatter.string(from: dateObj!)
+//    }
+    
+    func getEventLockTime() -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter.locale = Locale.init(identifier: "en_GB")
         let dateObj = dateFormatter.date(from: self.eventLockTime)
-        dateFormatter.dateFormat = "MMM dd' at 'h:mma"
-        return dateFormatter.string(from: dateObj!)
+        return dateObj!
     }
+
+    
+    func getEventLockTimeAsString() -> String {
+        let eventDate = getEventLockTime()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd' at 'h:mma"
+        return dateFormatter.string(from: eventDate)
+    }
+
+    
+    
+    
+    
 }
 
 
