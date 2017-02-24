@@ -10,7 +10,19 @@ import LBTAComponents
 import TRON
 //import SwiftyJSON
 
-class HomeController: DatasourceController {
+protocol HomeControllerDelegate: class {
+    func clickOnLeaderBoard()
+}
+
+class HomeController: DatasourceController, HomeControllerDelegate {
+    
+    let cellId = "cellId"
+    
+    func clickOnLeaderBoard() {
+        let leaderBoardController = LeaderBoardController()
+        present(leaderBoardController, animated: true, completion: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,10 +30,20 @@ class HomeController: DatasourceController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(handleSignOut))
         collectionView!.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        collectionView!.register(EventCell.self, forCellWithReuseIdentifier: cellId)
+        
         Service.sharedInstance.fetchEventFeed { (homeDataSource) in
             self.datasource = homeDataSource
         }
         
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! EventCell
+        cell.controller = self
+        cell.delegate = self
+        cell.datasourceItem = datasource?.item(indexPath)
+        return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

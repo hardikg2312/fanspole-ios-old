@@ -31,6 +31,7 @@
 		FFFBC9E61E5848BF00C8B781 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9E51E5848BF00C8B781 /* MainNavigationController.swift */; };
 		FFFBC9EB1E58492D00C8B781 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9EA1E58492D00C8B781 /* UserDefaults.swift */; };
 		FFFBC9ED1E584EAC00C8B781 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9EC1E584EAC00C8B781 /* HomeController.swift */; };
+		FFFE609C1E607C87002D50F5 /* LeaderBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFE609B1E607C87002D50F5 /* LeaderBoardController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		FFFBC9E51E5848BF00C8B781 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		FFFBC9EA1E58492D00C8B781 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		FFFBC9EC1E584EAC00C8B781 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		FFFE609B1E607C87002D50F5 /* LeaderBoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderBoardController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				FFFBC9EC1E584EAC00C8B781 /* HomeController.swift */,
 				FFFBC9E51E5848BF00C8B781 /* MainNavigationController.swift */,
 				FFFBC9B11E5836F700C8B781 /* LoginController.swift */,
+				FFFE609B1E607C87002D50F5 /* LeaderBoardController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFFE609C1E607C87002D50F5 /* LeaderBoardController.swift in Sources */,
 				FFFBC9B21E5836F700C8B781 /* LoginController.swift in Sources */,
 				FFB221701E5E12310004526F /* Service.swift in Sources */,
 				FF5264091E5CF0240091C22F /* Event.swift in Sources */,

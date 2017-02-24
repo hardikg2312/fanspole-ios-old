@@ -120,12 +120,20 @@ class EventCell: DatasourceCell{
         return manageTeamBtn
     }()
     
-    let leaderboardButton: UIButton = {
+    lazy var leaderboardButton: UIButton = {
         let leaderboardBtn = UIButton(type: .system)
         leaderboardBtn.setTitle("LeaderBoard", for: .normal)
+        leaderboardBtn.addTarget(self, action: #selector(handleLeaderBoardClick), for: .touchUpInside)
         leaderboardBtn.tintColor = .white
         return leaderboardBtn
     }()
+    
+    weak var delegate: HomeControllerDelegate?
+    
+    func handleLeaderBoardClick() {
+        print("Clicked")
+        delegate?.clickOnLeaderBoard()
+    }
     
     override func setupViews() {
         super.setupViews()
