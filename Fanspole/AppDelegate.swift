@@ -22,6 +22,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = MainNavigationController()
         
+        
+        UINavigationBar.appearance().barTintColor = UIColor(red: 31/255, green: 51/255, blue: 71/255, alpha: 1)
+        
+        // To set application status bar background white
+        application.statusBarStyle = .lightContent
+        let statusBarBackgroundView = UIView()
+        statusBarBackgroundView.backgroundColor = UIColor(red: 31/255, green: 51/255, blue: 71/255, alpha: 1)
+//        statusBarBackgroundView.colo
+        window?.addSubview(statusBarBackgroundView)
+        window?.addConstraintsWithFormat("H:|[v0]|", views: statusBarBackgroundView)
+        window?.addConstraintsWithFormat("V:|[v0(20)]", views: statusBarBackgroundView)
+        
         return true
     }
 

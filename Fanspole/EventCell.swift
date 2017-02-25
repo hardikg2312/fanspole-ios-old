@@ -10,9 +10,12 @@ import LBTAComponents
 
 class EventCell: DatasourceCell{
     
+    var classEvent: Event?
+    
     override var datasourceItem: Any?{
         didSet{
             guard let event = datasourceItem as? Event else { return }
+            classEvent = event
             eventTitle.text = "Match \(event.matchNo) (\(event.matchStage))"
             eventTeams.text = "\(event.teamOne.nameAttr) vs \(event.teamTwo.nameAttr)"
             eventGround.text = "\(event.ground.name) \(event.ground.location) \(event.ground.country)"
@@ -131,8 +134,9 @@ class EventCell: DatasourceCell{
     weak var delegate: HomeControllerDelegate?
     
     func handleLeaderBoardClick() {
-        print("Clicked")
-        delegate?.clickOnLeaderBoard()
+        if let matchId = classEvent?.id {
+            delegate?.clickOnLeaderBoard(matchId: matchId)
+        }
     }
     
     override func setupViews() {

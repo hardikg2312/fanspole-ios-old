@@ -11,23 +11,31 @@ import TRON
 //import SwiftyJSON
 
 protocol HomeControllerDelegate: class {
-    func clickOnLeaderBoard()
+    func clickOnLeaderBoard(matchId: Int)
 }
 
 class HomeController: DatasourceController, HomeControllerDelegate {
     
     let cellId = "cellId"
     
-    func clickOnLeaderBoard() {
+    func clickOnLeaderBoard(matchId: Int) {
         let leaderBoardController = LeaderBoardController()
+        leaderBoardController.matchId = matchId
         present(leaderBoardController, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Home"
+        navigationController?.navigationBar.isTranslucent = false
         
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
+        titleLabel.text = "  Home"
+        titleLabel.textColor = UIColor.white
+        titleLabel.font = UIFont.systemFont(ofSize: 20)
+        navigationItem.titleView = titleLabel
+        
+//        navigationItem.title = "Home"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(handleSignOut))
         collectionView!.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         collectionView!.register(EventCell.self, forCellWithReuseIdentifier: cellId)
