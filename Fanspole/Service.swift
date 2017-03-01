@@ -29,7 +29,7 @@ class Service {
     
     func fetchLeaderBoardFeed(matchId: Int, completion: @escaping (LeaderBoardDataSource) -> ()) {
         
-        let request: APIRequest<LeaderBoardDataSource, JSONError> = tron.request("api/v2/matches/422/leaderboard")
+        let request: APIRequest<LeaderBoardDataSource, JSONError> = tron.request("api/v2/matches/\(matchId)/leaderboard")
         request.headers = buildHeaders()
         request.perform(withSuccess: { (leaderBoardDataSource) in
             completion(leaderBoardDataSource)
@@ -42,7 +42,7 @@ class Service {
     private func buildHeaders() -> [String : String] {
         let headersBuilder = HeaderBuilder(defaultHeaders: ["X-Fanspole-Client":"254b4f821a12144966c43444039dca21b97dde0be39b1fc1d2f573228dea6bbb"])
         let authorizationRequirement = AuthorizationRequirement.none
-        let apiHeaders = headersBuilder.headers(forAuthorizationRequirement: authorizationRequirement, including: ["Authorization":"Bearer 79bd589f878d583042d03a807f4c8200216c5b50c6f25d834dba18088b0a2f75"])
+        let apiHeaders = headersBuilder.headers(forAuthorizationRequirement: authorizationRequirement, including: ["Authorization":"Bearer 22939e0013a259e5831de211e655dad29f93e385f0ccaaeca73a0c4d9d0bfbf1"])
         return apiHeaders
     }
     

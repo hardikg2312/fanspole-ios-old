@@ -18,7 +18,7 @@
 		FF6C72FB1E5F1BF3002055B2 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6C72FA1E5F1BF3002055B2 /* Ground.swift */; };
 		FF6C72FD1E5F1C00002055B2 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6C72FC1E5F1C00002055B2 /* Team.swift */; };
 		FF70CA8F1E61F2B600C4202B /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70CA8E1E61F2B600C4202B /* Member.swift */; };
-		FF70CA911E61F40700C4202B /* LeaderBoardMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70CA901E61F40700C4202B /* LeaderBoardMemberCell.swift */; };
+		FF70CA911E61F40700C4202B /* LeaderBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70CA901E61F40700C4202B /* LeaderBoardCell.swift */; };
 		FFB221701E5E12310004526F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB2216F1E5E12310004526F /* Service.swift */; };
 		FFFBC9B01E5836F700C8B781 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9AF1E5836F700C8B781 /* AppDelegate.swift */; };
 		FFFBC9B21E5836F700C8B781 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFBC9B11E5836F700C8B781 /* LoginController.swift */; };
@@ -72,7 +72,7 @@
 		FF6C72FA1E5F1BF3002055B2 /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 		FF6C72FC1E5F1C00002055B2 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		FF70CA8E1E61F2B600C4202B /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
-		FF70CA901E61F40700C4202B /* LeaderBoardMemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderBoardMemberCell.swift; sourceTree = "<group>"; };
+		FF70CA901E61F40700C4202B /* LeaderBoardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderBoardCell.swift; sourceTree = "<group>"; };
 		FFB2216F1E5E12310004526F /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FFFBC9AC1E5836F700C8B781 /* Fanspole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fanspole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFFBC9AF1E5836F700C8B781 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 				FF5264061E5CEFD10091C22F /* HomeDataSource.swift */,
 				FFFE609D1E60E26A002D50F5 /* LeaderBoardDataSource.swift */,
 				FF52640A1E5CF0DA0091C22F /* EventCell.swift */,
-				FF70CA901E61F40700C4202B /* LeaderBoardMemberCell.swift */,
+				FF70CA901E61F40700C4202B /* LeaderBoardCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -554,7 +554,7 @@
 				FF52640B1E5CF0DA0091C22F /* EventCell.swift in Sources */,
 				FF6C72F91E5F1BE2002055B2 /* Series.swift in Sources */,
 				FFFBC9B01E5836F700C8B781 /* AppDelegate.swift in Sources */,
-				FF70CA911E61F40700C4202B /* LeaderBoardMemberCell.swift in Sources */,
+				FF70CA911E61F40700C4202B /* LeaderBoardCell.swift in Sources */,
 				FFFBC9EB1E58492D00C8B781 /* UserDefaults.swift in Sources */,
 				FF6C72FB1E5F1BF3002055B2 /* Ground.swift in Sources */,
 				FF5264071E5CEFD10091C22F /* HomeDataSource.swift in Sources */,

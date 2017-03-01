@@ -20,6 +20,8 @@ class EventCell: DatasourceCell{
             eventTeams.text = "\(event.teamOne.nameAttr) vs \(event.teamTwo.nameAttr)"
             eventGround.text = "\(event.ground.name) \(event.ground.location) \(event.ground.country)"
             eventTime.text = "\(event.getEventLockTimeAsString())"
+            eventTeamsOneImage.loadImage(urlString: event.teamOne.flagPhoto)
+            eventTeamsTwoImage.loadImage(urlString: event.teamTwo.flagPhoto)
             
             if !event.teamCreated {
                 viewTeamButtonContainerView.removeFromSuperview()
@@ -44,17 +46,15 @@ class EventCell: DatasourceCell{
         return et
     }()
     
-    let eventTeamsOneImage: UIImageView = {
-        let etimage = UIImageView()
-        etimage.image = #imageLiteral(resourceName: "india")
-        etimage.contentMode = .scaleAspectFill
+    let eventTeamsOneImage: CachedImageView = {
+        let etimage = CachedImageView()
+        etimage.contentMode = .scaleAspectFit
         return etimage
     }()
     
-    let eventTeamsTwoImage: UIImageView = {
-        let etimage = UIImageView()
-        etimage.image = #imageLiteral(resourceName: "ausflag")
-        etimage.contentMode = .scaleAspectFill
+    let eventTeamsTwoImage: CachedImageView = {
+        let etimage = CachedImageView()
+        etimage.contentMode = .scaleAspectFit
         return etimage
     }()
     
@@ -185,9 +185,9 @@ class EventCell: DatasourceCell{
         addSubview(eventTeamsTwoImage)
         
         eventTeamInfoStackView.anchor(eventTitle.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topConstant: 4, leftConstant: 50, bottomConstant: 4, rightConstant: 50, widthConstant: 0, heightConstant: 20)
-        eventTeamsOneImage.anchor(eventTeamsOneImageContainerView.topAnchor, left: eventTeamsOneImageContainerView.leftAnchor, bottom: nil, right: eventTeamsOneImageContainerView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 20, heightConstant: 20)
+        eventTeamsOneImage.anchor(eventTeamsOneImageContainerView.topAnchor, left: eventTeamsOneImageContainerView.leftAnchor, bottom: nil, right: eventTeamsOneImageContainerView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 34, heightConstant: 21)
         eventTeams.anchor(eventTeamsContainerView.topAnchor, left: eventTeamsContainerView.leftAnchor, bottom: nil, right: eventTeamsContainerView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
-        eventTeamsTwoImage.anchor(eventTeamsTwoImageContainerView.topAnchor, left: eventTeamsTwoImageContainerView.leftAnchor, bottom: nil, right: eventTeamsTwoImageContainerView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 20, heightConstant: 20)
+        eventTeamsTwoImage.anchor(eventTeamsTwoImageContainerView.topAnchor, left: eventTeamsTwoImageContainerView.leftAnchor, bottom: nil, right: eventTeamsTwoImageContainerView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 34, heightConstant: 21)
     }
     
     

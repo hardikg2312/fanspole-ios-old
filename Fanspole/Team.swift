@@ -17,7 +17,7 @@ struct Team {
     let teamColor: String
     let captainId: Int
     let topicId: Int
-    let falgPhoto: String
+    let flagPhoto: String
     
     init(json: JSON) {
         self.id = json["id"].intValue
@@ -27,6 +27,6 @@ struct Team {
         self.teamColor = json["team_color"].stringValue
         self.captainId = json["captain_id"].intValue
         self.topicId = json["topic_id"].intValue
-        self.falgPhoto = json["slfalg_photoug"].stringValue
+        self.flagPhoto = json["flag_photo"]["url"].stringValue
     }
 }
