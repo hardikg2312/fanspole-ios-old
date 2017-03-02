@@ -102,9 +102,10 @@ class EventCell: DatasourceCell{
         return leagueBtn
     }()
     
-    let viewTeamButton: UIButton = {
+    lazy var viewTeamButton: UIButton = {
         let viewTeamBtn = UIButton(type: .system)
         viewTeamBtn.setImage(#imageLiteral(resourceName: "ic_group"), for: .normal)
+        viewTeamBtn.addTarget(self, action: #selector(handleViewTeamClick), for: .touchUpInside)
         viewTeamBtn.tintColor = .white
         return viewTeamBtn
     }()
@@ -136,6 +137,12 @@ class EventCell: DatasourceCell{
     func handleLeaderBoardClick() {
         if let matchId = classEvent?.id {
             delegate?.clickOnLeaderBoard(matchId: matchId)
+        }
+    }
+    
+    func handleViewTeamClick() {
+        if let matchId = classEvent?.id {
+            delegate?.clickOnViewTeam(matchId: matchId)
         }
     }
     

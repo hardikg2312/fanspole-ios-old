@@ -36,13 +36,23 @@ class Service {
         }) { (err) in
             print("Faild to fetch json...", err)
         }
+    }
+    
+    func fetchUserTeam(matchId: Int, completion: @escaping (ViewTeamDataSource) -> ()) {
         
+        let request: APIRequest<ViewTeamDataSource, JSONError> = tron.request("api/v2/users/1/match/\(matchId)/team")
+        request.headers = buildHeaders()
+        request.perform(withSuccess: { (viewTeamDataSource) in
+            completion(viewTeamDataSource)
+        }) { (err) in
+            print("Faild to fetch json...", err)
+        }
     }
     
     private func buildHeaders() -> [String : String] {
         let headersBuilder = HeaderBuilder(defaultHeaders: ["X-Fanspole-Client":"254b4f821a12144966c43444039dca21b97dde0be39b1fc1d2f573228dea6bbb"])
         let authorizationRequirement = AuthorizationRequirement.none
-        let apiHeaders = headersBuilder.headers(forAuthorizationRequirement: authorizationRequirement, including: ["Authorization":"Bearer 22939e0013a259e5831de211e655dad29f93e385f0ccaaeca73a0c4d9d0bfbf1"])
+        let apiHeaders = headersBuilder.headers(forAuthorizationRequirement: authorizationRequirement, including: ["Authorization":"Bearer fddb88c854866ddd1d488bfceff67ae23e8ea3af2ab9face60c0cc6e41731a97"])
         return apiHeaders
     }
     

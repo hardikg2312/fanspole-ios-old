@@ -12,6 +12,7 @@ import TRON
 
 protocol HomeControllerDelegate: class {
     func clickOnLeaderBoard(matchId: Int)
+    func clickOnViewTeam(matchId: Int)
 }
 
 class HomeController: DatasourceController, HomeControllerDelegate {
@@ -22,6 +23,12 @@ class HomeController: DatasourceController, HomeControllerDelegate {
         let leaderBoardController = LeaderBoardController()
         leaderBoardController.matchId = matchId
         present(leaderBoardController, animated: true, completion: nil)
+    }
+    
+    func clickOnViewTeam(matchId: Int) {
+        let viewTeamController = ViewTeamController()
+        viewTeamController.matchId = matchId
+        present(viewTeamController, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {

@@ -26,7 +26,6 @@ class LeaderBoardHeaderCell: DatasourceCell {
     
     let matchText: UILabel = {
         let label = UILabel()
-        label.text = "IU vs KK (2nd Qualifining Final)"
         label.font = UIFont.systemFont(ofSize: 13)
         label.textAlignment = .center
         label.textColor = .white
@@ -89,8 +88,7 @@ class LeaderBoardHeaderCell: DatasourceCell {
 }
 
 class LeaderBoardMemberCell: DatasourceCell {
-    
-    
+
     override var datasourceItem: Any?{
         didSet{
             guard let member = datasourceItem as? Member else { return }
