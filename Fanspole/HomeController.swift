@@ -47,7 +47,7 @@ class HomeController: DatasourceController, HomeControllerDelegate {
         collectionView!.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         collectionView!.register(EventCell.self, forCellWithReuseIdentifier: cellId)
         
-        Service.sharedInstance.fetchEventFeed { (homeDataSource) in
+        Service.sharedInstance.fetchEvents { (homeDataSource) in
             self.datasource = homeDataSource
         }
         

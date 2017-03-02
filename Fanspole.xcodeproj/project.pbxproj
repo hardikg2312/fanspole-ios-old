@@ -20,6 +20,7 @@
 		FF70CA8F1E61F2B600C4202B /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70CA8E1E61F2B600C4202B /* Member.swift */; };
 		FF70CA911E61F40700C4202B /* LeaderBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70CA901E61F40700C4202B /* LeaderBoardCell.swift */; };
 		FFAB17D31E685F3000AF9D7F /* EventTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB17D21E685F3000AF9D7F /* EventTeam.swift */; };
+		FFAB17D51E687F5300AF9D7F /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB17D41E687F5300AF9D7F /* ServiceConstants.swift */; };
 		FFB221701E5E12310004526F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB2216F1E5E12310004526F /* Service.swift */; };
 		FFC33F2D1E6763B200E6E466 /* ViewTeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC33F2C1E6763B200E6E466 /* ViewTeamController.swift */; };
 		FFC33F2F1E6764A600E6E466 /* ViewTeamDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC33F2E1E6764A600E6E466 /* ViewTeamDataSource.swift */; };
@@ -79,6 +80,7 @@
 		FF70CA8E1E61F2B600C4202B /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		FF70CA901E61F40700C4202B /* LeaderBoardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderBoardCell.swift; sourceTree = "<group>"; };
 		FFAB17D21E685F3000AF9D7F /* EventTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTeam.swift; sourceTree = "<group>"; };
+		FFAB17D41E687F5300AF9D7F /* ServiceConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
 		FFB2216F1E5E12310004526F /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FFC33F2C1E6763B200E6E466 /* ViewTeamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTeamController.swift; sourceTree = "<group>"; };
 		FFC33F2E1E6764A600E6E466 /* ViewTeamDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTeamDataSource.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB2216F1E5E12310004526F /* Service.swift */,
+				FFAB17D41E687F5300AF9D7F /* ServiceConstants.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF70CA8F1E61F2B600C4202B /* Member.swift in Sources */,
+				FFAB17D51E687F5300AF9D7F /* ServiceConstants.swift in Sources */,
 				FFFE609C1E607C87002D50F5 /* LeaderBoardController.swift in Sources */,
 				FFC33F331E676C0C00E6E466 /* ViewTeamPlayerCell.swift in Sources */,
 				FFFBC9B21E5836F700C8B781 /* LoginController.swift in Sources */,
