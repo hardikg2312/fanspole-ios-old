@@ -135,6 +135,22 @@ class ViewTeamPlayerCell: DatasourceCell {
                 playerImage.loadImage(urlString: player.photoUrl)
             }
             
+            if player.style == 1 {
+                playerStyle.image = #imageLiteral(resourceName: "batsman").withRenderingMode(.alwaysTemplate)
+            } else if player.style == 3 {
+                playerStyle.image = #imageLiteral(resourceName: "batsman_allrounder").withRenderingMode(.alwaysTemplate)
+            } else if player.style == 5 {
+                playerStyle.image = #imageLiteral(resourceName: "batsman_keeper").withRenderingMode(.alwaysTemplate)
+            } else if player.style == 7 {
+                playerStyle.image = #imageLiteral(resourceName: "keeper").withRenderingMode(.alwaysTemplate)
+            } else if player.style == 9 {
+                playerStyle.image = #imageLiteral(resourceName: "allrounder").withRenderingMode(.alwaysTemplate)
+            } else if player.style == 11 {
+                playerStyle.image = #imageLiteral(resourceName: "bowler_allrounder").withRenderingMode(.alwaysTemplate)
+            } else {
+                playerStyle.image = #imageLiteral(resourceName: "bowler").withRenderingMode(.alwaysTemplate)
+            }
+            
             
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .decimal
@@ -155,6 +171,7 @@ class ViewTeamPlayerCell: DatasourceCell {
                 playerValue.textColor = .white
                 playerScore.textColor = .white
                 playerName.textColor = .white
+                playerStyle.tintColor = .white
             }
         }
     }
@@ -176,7 +193,7 @@ class ViewTeamPlayerCell: DatasourceCell {
     
     let playerStyle: UIImageView = {
         let image = UIImageView()
-        image.image = #imageLiteral(resourceName: "india")
+        image.tintColor = UIColor(r: 100, g: 100, b: 100)
         image.contentMode = .scaleAspectFit
         return image
     }()
@@ -218,11 +235,11 @@ class ViewTeamPlayerCell: DatasourceCell {
         
         playerValue.anchor(self.topAnchor, left: playerImage.rightAnchor, bottom: nil, right: self.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         
-        playerStyle.anchor(playerValue.bottomAnchor, left: playerImage.rightAnchor, bottom: nil, right: nil, topConstant: 4, leftConstant: 8, bottomConstant: 0, rightConstant: 0, widthConstant: 25, heightConstant: 20)
+        playerStyle.anchor(playerValue.bottomAnchor, left: playerImage.rightAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 8, bottomConstant: 0, rightConstant: 0, widthConstant: 25, heightConstant: 20)
         
-        playerTeamFlag.anchor(playerValue.bottomAnchor, left: playerStyle.rightAnchor, bottom: nil, right: nil, topConstant: 4, leftConstant: 8, bottomConstant: 0, rightConstant: 0, widthConstant: 21, heightConstant: 14)
+        playerTeamFlag.anchor(playerValue.bottomAnchor, left: playerStyle.rightAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 8, bottomConstant: 0, rightConstant: 0, widthConstant: 21, heightConstant: 14)
         
-        playerScore.anchor(playerValue.bottomAnchor, left: playerTeamFlag.rightAnchor, bottom: nil, right: nil, topConstant: 4, leftConstant: 8, bottomConstant: 0, rightConstant: 0, widthConstant: 30, heightConstant: 20)
+        playerScore.anchor(playerValue.bottomAnchor, left: playerTeamFlag.rightAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 8, bottomConstant: 0, rightConstant: 0, widthConstant: 30, heightConstant: 20)
         
         playerName.anchor(playerStyle.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topConstant: 14, leftConstant: 0, bottomConstant: 8, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         
