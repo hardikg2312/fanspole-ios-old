@@ -17,6 +17,19 @@ class Service {
     
     static let sharedInstance = Service()
     
+    func authenticateUserLogin(email: String, password: String, completion: @escaping (JSON, Int) -> ()) {
+        let headers = buildHeaders()
+        let parameters: Parameters = ["grant_type" : "password", "email" : email, "password" : password]
+        Alamofire.request("\(baseUrl)\(Methods.UserLogin)", method: .post, parameters: parameters, headers: headers).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                completion(JSON(value), (response.response?.statusCode)!)
+            case .failure(let err):
+                print("Faild to fetch json...", err)
+            }
+        }
+    }
+    
     func fetchEvents(completion: @escaping (JSON) -> ()){
         let headers = buildHeaders()
         Alamofire.request("\(baseUrl)\(apiVersion)\(Methods.UserCards)", headers: headers).responseJSON { response in
@@ -60,13 +73,13 @@ class Service {
     
     private func buildHeaders() -> HTTPHeaders {
         let headers: HTTPHeaders = [
-            "Authorization":"Bearer d0f58a645b3afee8638dcf04363ba52e06a434394d0ffd859c0704ace7d25edd",
-            "X-Fanspole-Client": "254b4f821a12144966c43444039dca21b97dde0be39b1fc1d2f573228dea6bbb"
+            "\(Constants.ClientKey)": "\(Constants.ClientValue)",
+            "Authorization":"Bearer \(UserDefaults.standard.getAccessTokenn())"
         ]
         return headers
     }
     
-    func substituteKeyInMethod(_ method: String, key: String, value: String) -> String? {
+    private func substituteKeyInMethod(_ method: String, key: String, value: String) -> String? {
         if method.range(of: "{\(key)}") != nil {
             return method.replacingOccurrences(of: "{\(key)}", with: value)
         } else {

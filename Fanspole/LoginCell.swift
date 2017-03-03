@@ -46,7 +46,47 @@ class LoginCell: UICollectionViewCell {
     weak var delegate: LoginControllerDelegate?
     
     func handleLogin() {
-        delegate?.finishLoggingIn()
+        if emailTextField.text == "" && passwordTextField.text == "" {
+            emailTextField.layer.borderColor = UIColor.red.cgColor
+            passwordTextField.layer.borderColor = UIColor.red.cgColor
+        } else if emailTextField.text == "" {
+            emailTextField.layer.borderColor = UIColor.red.cgColor
+            passwordTextField.layer.borderColor = UIColor.lightGray.cgColor
+        } else if passwordTextField.text == "" {
+            emailTextField.layer.borderColor = UIColor.lightGray.cgColor
+            passwordTextField.layer.borderColor = UIColor.red.cgColor
+        } else {
+            emailTextField.layer.borderColor = UIColor.lightGray.cgColor
+            passwordTextField.layer.borderColor = UIColor.lightGray.cgColor
+            
+            Service.sharedInstance.authenticateUserLogin(email: emailTextField.text!, password: passwordTextField.text!) { (response, statusCode) in
+                if statusCode == 401 {
+                    self.giveAlertWithMessage(message: "Invalid Email/Password")
+                } else if statusCode == 200 {
+                    let accessToken = response["access_token"].stringValue
+                    let refreshToken = response["refresh_token"].stringValue
+                    UserDefaults.standard.setIsLoggedIn(value: true)
+                    UserDefaults.standard.setAccessTokenn(value: accessToken)
+                    UserDefaults.standard.setRefreshToken(value: refreshToken)
+                    self.delegate?.finishLoggingIn()
+                }
+            }
+        }
+    }
+    
+    func giveAlertWithMessage(message: String) {
+        let toastLabel = UILabel(frame: CGRect(x: self.frame.size.width/2 - 150, y: self.frame.size.height-100, width: 300, height: 35))
+        toastLabel.backgroundColor = UIColor(r: 100, g: 100, b: 100)
+        toastLabel.textColor = UIColor.white
+        toastLabel.textAlignment = NSTextAlignment.center
+        self.addSubview(toastLabel)
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        UIView.animate(withDuration: 4.0, animations: {
+            toastLabel.alpha = 0.0
+        })
     }
     
     override init(frame: CGRect) {

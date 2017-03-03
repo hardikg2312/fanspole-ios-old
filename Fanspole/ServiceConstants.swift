@@ -23,6 +23,7 @@ extension Service {
     struct Methods {
         
         // MARK: Account
+        static let UserLogin = "/oauth/token"
         static let UserCards = "/users/cards"
         static let MatchLeaderBoard = "/matches/{id}/leaderboard"
         static let ViewTeam = "/users/{user_id}/match/{match_id}/team"
