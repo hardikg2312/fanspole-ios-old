@@ -16,13 +16,14 @@ extension Service {
         
         // MARK: URLs
         static let ApiScheme = "http"
-        static let ApiHost = "localhost:3000/api"
-        static let ApiVersion = "/v2"
+        static let ApiHost = "localhost:3000"
+        static let ApiVersion = "/api/v2"
     }
     
     struct Methods {
         
         // MARK: Account
+        static let UserLogin = "/oauth/token"
         static let UserCards = "/users/cards"
         static let MatchLeaderBoard = "/matches/{id}/leaderboard"
         static let ViewTeam = "/users/{user_id}/match/{match_id}/team"

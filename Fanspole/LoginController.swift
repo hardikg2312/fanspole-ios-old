@@ -177,11 +177,7 @@ class LoginController: UIViewController, UICollectionViewDataSource, UICollectio
         //we'll perhaps implement the home controller a little later
         let rootViewController = UIApplication.shared.keyWindow?.rootViewController
         guard let mainNavigationController = rootViewController as? MainNavigationController else { return }
-        
         mainNavigationController.viewControllers = [HomeController()]
-        
-        UserDefaults.standard.setIsLoggedIn(value: true)
-        
         dismiss(animated: true, completion: nil)
     }
 
