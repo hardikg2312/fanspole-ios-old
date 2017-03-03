@@ -8,6 +8,7 @@
 
 import UIKit
 import LBTAComponents
+import SwiftyJSON
 
 class ViewTeamController: DatasourceController {
     
@@ -30,23 +31,42 @@ class ViewTeamController: DatasourceController {
         layout?.minimumInteritemSpacing = 1
         
         collectionView!.contentInset = UIEdgeInsets(top: 62, left: 0, bottom: 0, right: 0)
-        collectionView!.backgroundColor = UIColor(r: 230, g: 230, b: 230)        
+        collectionView!.backgroundColor = UIColor(r: 230, g: 230, b: 230)
         
-//        Service.sharedInstance.fetchUserTeam(matchId: matchId!) { (viewTeamDataSource) in
-//            self.datasource = viewTeamDataSource
-//        }
-        
-        Service.sharedInstance.fetchUserTeam(matchId: matchId!) { (response) in
-            do {
-                let viewTeamDataSource = try ViewTeamDataSource(json: response)
-                self.datasource = viewTeamDataSource
-            } catch {
-                print(error)
+        Service.sharedInstance.fetchUserTeam(matchId: matchId!) { (response, status) in
+            if status == 401 {
+                self.serviceCallForUnauthorizedApiHit(matchId: self.matchId!)
+            } else if status == 200 {
+                self.setDataSource(json: response)
             }
         }
-
-
     }
+    
+    
+    private func serviceCallForUnauthorizedApiHit(matchId: Int) {
+        Service.sharedInstance.authenticateUserLoginWithRefereshToken(completion: { (response, status) in
+            if status == 200 {
+                Service.sharedInstance.fetchUserTeam(matchId: matchId, completion: { (response, status) in
+                    self.setDataSource(json: response)
+                })
+            } else {
+                self.presentLoginView()
+            }
+        })
+    }
+    
+    private func setDataSource(json: JSON) {
+        do {
+            let viewTeamDataSource = try ViewTeamDataSource(json: json)
+            self.datasource = viewTeamDataSource
+        } catch { print(error) }
+    }
+    
+    private func presentLoginView() {
+        let loginController = LoginController()
+        self.present(loginController, animated: true, completion: {})
+    }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1

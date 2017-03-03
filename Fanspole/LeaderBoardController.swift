@@ -8,6 +8,7 @@
 
 import UIKit
 import  LBTAComponents
+import SwiftyJSON
 
 class LeaderBoardController: DatasourceController {
     
@@ -32,15 +33,39 @@ class LeaderBoardController: DatasourceController {
 //            self.datasource = leaderBoardDataSource
 //        }
         
-        Service.sharedInstance.fetchLeaderBoard(matchId: matchId!) { (response) in
-            do {
-                let leaderBoardDataSource = try LeaderBoardDataSource(json: response)
-                self.datasource = leaderBoardDataSource
-            } catch {
-                print(error)
+        Service.sharedInstance.fetchLeaderBoard(matchId: matchId!) { (response, status) in
+            if status == 401 {
+                self.serviceCallForUnauthorizedApiHit(matchId: self.matchId!)
+            } else if status == 200 {
+                self.setDataSource(json: response)
             }
         }
         
+    }
+    
+    private func serviceCallForUnauthorizedApiHit(matchId: Int) {
+        Service.sharedInstance.authenticateUserLoginWithRefereshToken(completion: { (response, status) in
+            if status == 200 {
+                Service.sharedInstance.fetchLeaderBoard(matchId: matchId, completion: { (response, status) in
+                    self.setDataSource(json: response)
+                })
+                
+            } else {
+                self.presentLoginView()
+            }
+        })
+    }
+    
+    private func setDataSource(json: JSON) {
+        do {
+            let leaderBoardDataSource = try LeaderBoardDataSource(json: json)
+            self.datasource = leaderBoardDataSource
+        } catch { print(error) }
+    }
+    
+    private func presentLoginView() {
+        let loginController = LoginController()
+        self.present(loginController, animated: true, completion: {})
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

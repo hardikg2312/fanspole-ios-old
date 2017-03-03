@@ -7,6 +7,7 @@
 //
 
 import LBTAComponents
+import SwiftyJSON
 
 protocol HomeControllerDelegate: class {
     func clickOnLeaderBoard(matchId: Int)
@@ -45,15 +46,37 @@ class HomeController: DatasourceController, HomeControllerDelegate {
         collectionView!.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         collectionView!.register(EventCell.self, forCellWithReuseIdentifier: cellId)
         
-        Service.sharedInstance.fetchEvents { (response) in
-            do {
-                let homeDataSource = try HomeDataSource(json: response)
-                self.datasource = homeDataSource
-            } catch {
-                print(error)
+        Service.sharedInstance.fetchEvents { (response, status) in
+            if status == 401 {
+                self.serviceCallForUnauthorizedApiHit()
+            } else if status == 200 {
+                self.setDataSource(json: response)
             }
         }
-        
+    }
+    
+    private func serviceCallForUnauthorizedApiHit() {
+        Service.sharedInstance.authenticateUserLoginWithRefereshToken(completion: { (response, status) in
+            if status == 200 {
+                Service.sharedInstance.fetchEvents(completion: { (response, status) in
+                    self.setDataSource(json: response)
+                })
+            } else {
+                self.presentLoginView()
+            }
+        })
+    }
+    
+    private func setDataSource(json: JSON) {
+        do {
+            let homeDataSource = try HomeDataSource(json: json)
+            self.datasource = homeDataSource
+        } catch { print(error) }
+    }
+    
+    private func presentLoginView() {
+        let loginController = LoginController()
+        self.present(loginController, animated: true, completion: {})
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,6 +94,9 @@ class HomeController: DatasourceController, HomeControllerDelegate {
     
     func handleSignOut() {
         UserDefaults.standard.setIsLoggedIn(value: false)
+        UserDefaults.standard.setAccessTokenn(value: "")
+        UserDefaults.standard.setRefreshToken(value: "")
+
 
         let loginController = LoginController()
         present(loginController, animated: true, completion: nil)
