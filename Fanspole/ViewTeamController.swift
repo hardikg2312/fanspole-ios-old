@@ -32,9 +32,19 @@ class ViewTeamController: DatasourceController {
         collectionView!.contentInset = UIEdgeInsets(top: 62, left: 0, bottom: 0, right: 0)
         collectionView!.backgroundColor = UIColor(r: 230, g: 230, b: 230)        
         
-        Service.sharedInstance.fetchUserTeam(matchId: matchId!) { (viewTeamDataSource) in
-            self.datasource = viewTeamDataSource
+//        Service.sharedInstance.fetchUserTeam(matchId: matchId!) { (viewTeamDataSource) in
+//            self.datasource = viewTeamDataSource
+//        }
+        
+        Service.sharedInstance.fetchUserTeam(matchId: matchId!) { (response) in
+            do {
+                let viewTeamDataSource = try ViewTeamDataSource(json: response)
+                self.datasource = viewTeamDataSource
+            } catch {
+                print(error)
+            }
         }
+
 
     }
     

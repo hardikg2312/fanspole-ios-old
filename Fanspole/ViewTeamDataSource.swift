@@ -7,10 +7,9 @@
 //
 
 import LBTAComponents
-import TRON
 import SwiftyJSON
 
-class ViewTeamDataSource: Datasource, JSONDecodable {
+class ViewTeamDataSource: Datasource {
     
     let players: [Player]
     let eventTeam: EventTeam

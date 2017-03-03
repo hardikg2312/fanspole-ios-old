@@ -7,8 +7,6 @@
 //
 
 import LBTAComponents
-import TRON
-//import SwiftyJSON
 
 protocol HomeControllerDelegate: class {
     func clickOnLeaderBoard(matchId: Int)
@@ -47,8 +45,13 @@ class HomeController: DatasourceController, HomeControllerDelegate {
         collectionView!.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         collectionView!.register(EventCell.self, forCellWithReuseIdentifier: cellId)
         
-        Service.sharedInstance.fetchEvents { (homeDataSource) in
-            self.datasource = homeDataSource
+        Service.sharedInstance.fetchEvents { (response) in
+            do {
+                let homeDataSource = try HomeDataSource(json: response)
+                self.datasource = homeDataSource
+            } catch {
+                print(error)
+            }
         }
         
     }

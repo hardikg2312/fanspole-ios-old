@@ -7,10 +7,9 @@
 //
 
 import LBTAComponents
-import TRON
 import SwiftyJSON
 
-class LeaderBoardDataSource: Datasource, JSONDecodable {
+class LeaderBoardDataSource: Datasource {
     
     let membersCount: Int
     let membersRank: Int

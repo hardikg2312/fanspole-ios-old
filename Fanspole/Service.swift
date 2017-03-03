@@ -7,55 +7,63 @@
 //
 
 import Foundation
-import TRON
+import Alamofire
 import SwiftyJSON
 
 
 class Service {
-    let tron = TRON(baseURL: "\(Constants.ApiScheme)://\(Constants.ApiHost)")
+    let baseUrl = "\(Constants.ApiScheme)://\(Constants.ApiHost)"
+    let apiVersion = "\(Constants.ApiVersion)"
     
     static let sharedInstance = Service()
     
-    func fetchEvents(completion: @escaping (HomeDataSource) -> ()) {
-        let request: APIRequest<HomeDataSource, JSONError> = tron.request("\(Constants.ApiVersion)\(Methods.UserCards)")
-        request.headers = buildHeaders()
-        request.perform(withSuccess: { (homeDataSource) in
-            completion(homeDataSource)
-        }) { (err) in
-            print("Faild to fetch json...", err)
+    func fetchEvents(completion: @escaping (JSON) -> ()){
+        let headers = buildHeaders()
+        Alamofire.request("\(baseUrl)\(apiVersion)\(Methods.UserCards)", headers: headers).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                completion(JSON(value))
+            case .failure(let err):
+                print("Faild to fetch json...", err)
+            }
         }
     }
     
-    func fetchLeaderBoard(matchId: Int, completion: @escaping (LeaderBoardDataSource) -> ()) {
+    func fetchLeaderBoard(matchId: Int, completion: @escaping (JSON) -> ()) {
+        let headers = buildHeaders()
         var mutableMethod: String = Methods.MatchLeaderBoard
         mutableMethod = substituteKeyInMethod(mutableMethod, key: "id", value: String(matchId))!
-        let request: APIRequest<LeaderBoardDataSource, JSONError> = tron.request("\(Constants.ApiVersion)\(mutableMethod)")
-        request.headers = buildHeaders()
-        request.perform(withSuccess: { (leaderBoardDataSource) in
-            completion(leaderBoardDataSource)
-        }) { (err) in
-            print("Faild to fetch json...", err)
+        Alamofire.request("\(baseUrl)\(apiVersion)\(mutableMethod)", headers: headers).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                completion(JSON(value))
+            case .failure(let err):
+                print("Faild to fetch json...", err)
+            }
         }
     }
     
-    func fetchUserTeam(matchId: Int, completion: @escaping (ViewTeamDataSource) -> ()) {
+    func fetchUserTeam(matchId: Int, completion: @escaping (JSON) -> ()) {
+        let headers = buildHeaders()
         var mutableMethod: String = Methods.ViewTeam
         mutableMethod = substituteKeyInMethod(mutableMethod, key: "user_id", value: String(1))!
         mutableMethod = substituteKeyInMethod(mutableMethod, key: "match_id", value: String(matchId))!
-        let request: APIRequest<ViewTeamDataSource, JSONError> = tron.request("\(Constants.ApiVersion)\(mutableMethod)")
-        request.headers = buildHeaders()
-        request.perform(withSuccess: { (viewTeamDataSource) in
-            completion(viewTeamDataSource)
-        }) { (err) in
-            print("Faild to fetch json...", err)
+        Alamofire.request("\(baseUrl)\(apiVersion)\(mutableMethod)", headers: headers).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                completion(JSON(value))
+            case .failure(let err):
+                print("Faild to fetch json...", err)
+            }
         }
     }
     
-    private func buildHeaders() -> [String : String] {
-        let headersBuilder = HeaderBuilder(defaultHeaders: [Service.Constants.ClientKey : Service.Constants.ClientValue])
-        let authorizationRequirement = AuthorizationRequirement.none
-        let apiHeaders = headersBuilder.headers(forAuthorizationRequirement: authorizationRequirement, including: ["Authorization":"Bearer fddb88c854866ddd1d488bfceff67ae23e8ea3af2ab9face60c0cc6e41731a97"])
-        return apiHeaders
+    private func buildHeaders() -> HTTPHeaders {
+        let headers: HTTPHeaders = [
+            "Authorization":"Bearer d0f58a645b3afee8638dcf04363ba52e06a434394d0ffd859c0704ace7d25edd",
+            "X-Fanspole-Client": "254b4f821a12144966c43444039dca21b97dde0be39b1fc1d2f573228dea6bbb"
+        ]
+        return headers
     }
     
     func substituteKeyInMethod(_ method: String, key: String, value: String) -> String? {
@@ -67,10 +75,3 @@ class Service {
     }
     
 }
-
-class JSONError:JSONDecodable {
-    required init(json: JSON) throws {
-        print("JSON Error")
-    }
-}
-

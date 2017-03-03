@@ -7,10 +7,9 @@
 //
 
 import LBTAComponents
-import TRON
 import SwiftyJSON
 
-class HomeDataSource: Datasource, JSONDecodable {
+class HomeDataSource: Datasource {
     
     let events: [Event]
     
@@ -22,7 +21,6 @@ class HomeDataSource: Datasource, JSONDecodable {
         let upcoimgMatches = upcoimgMatchesJsons.map{Event(json: $0)}
         let finishedMatches = finishedMatchesJsons.map{Event(json: $0)}
         self.events = upcoimgMatches + finishedMatches
-        
     }
     
     override func cellClasses() -> [DatasourceCell.Type] {

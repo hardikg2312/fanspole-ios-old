@@ -16,8 +16,8 @@ extension Service {
         
         // MARK: URLs
         static let ApiScheme = "http"
-        static let ApiHost = "localhost:3000/api"
-        static let ApiVersion = "/v2"
+        static let ApiHost = "localhost:3000"
+        static let ApiVersion = "/api/v2"
     }
     
     struct Methods {
